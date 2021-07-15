@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Carmen Quesada - Home</title>
+        <!-- SEO AND SOCIAL MEDIA META TAGS -->
+        <meta
+            name="description"
+            content="Jesús Andrés Fuentes Valverde was born in Cd.
+            Juarez, Mexico. He is an active pianist,
+            arranger and educator."
+        />
+
+        <meta property="og:title" content="Jesus Fuentes - Pianist" />
+        <meta
+            property="og:description"
+            content="Jesús Andrés Fuentes Valverde was born in Cd.
+            Juarez, Mexico. He is an active pianist,
+            arranger and educator."
+        />
+        <meta
+            property="og:image"
+            content="https://www.jesusfuentespiano.com/epkheader.png"
+        />
+        <meta property="og:url" content="https://www.jesusfuentespiano.com" />
+
+        <meta name="twitter:title" content="Jesus Fuentes - Pianist" />
+        <meta
+            name="twitter:description"
+            content="Jesús Andrés Fuentes Valverde was born in Cd.
+            Juarez, Mexico. He is an active pianist,
+            arranger and educator."
+        />
+        <meta
+            name="twitter:image"
+            content="https://www.jesusfuentespiano.com/epkheader.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Martel:wght@500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.14/dist/css/splide.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@0.4.6/dist/css/splide-extension-video.min.css"
+        />
+        <script
+            src="https://kit.fontawesome.com/a8f5f6bfc2.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container-xxl">
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a
+                            class="nav-link"
+                            aria-current="page"
+                            href="/"
+                            lang="en-US"
+                            >Home</a
+                        >
+                        <a
+                            class="nav-link hide-lang"
+                            aria-current="page"
+                            href="/"
+                            lang="es-MX"
+                            >Inicio</a
+                        >
+                        <a class="nav-link" href="/about" lang="en-US">About</a>
+                        <a class="nav-link hide-lang" href="/about" lang="es-MX"
+                            >Acerca de</a
+                        >
+                        <a class="nav-link" lang="en-US" href="/media">Media</a>
+                        <a class="nav-link hide-lang" href="/media" lang="es-MX"
+                            >Videos</a
+                        >
+                        <a
+                            class="nav-link"
+                            lang="en-US"
+                            href="/teaching-philosophy"
+                            >Teaching Philosophy</a
+                        >
+                        <a
+                            class="nav-link hide-lang"
+                            href="/teaching-philosophy"
+                            lang="es-MX"
+                            >Filosofía de enseñanza</a
+                        >
+                        <a class="nav-link" href="/contact" lang="en-US"
+                            >Contact</a
+                        >
+                        <a
+                            class="nav-link hide-lang"
+                            href="/contact"
+                            lang="es-MX"
+                            >Contacto</a
+                        >
+                        <div class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdown"
+                                role="button"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                            >
+                                <i class="fas fa-globe"></i>
+                            </a>
+                            <div
+                                class="dropdown-menu dropdown-menu-right"
+                                aria-labelledby="navbarDropdown"
+                            >
+                                <a
+                                    class="dropdown-item lang-select"
+                                    data-lang="en-US"
+                                    >English</a
+                                >
+                                <a
+                                    class="dropdown-item lang-select"
+                                    data-lang="es-MX"
+                                    >Español</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container-xxl">
+            <section id="media">
+                <h2 class="section-header" lang="en-US">Media</h2>
+                <h2 class="section-header hide-lang" lang="es-MX">Videos</h2>
+                <!-- <div class="youtube embed-responsive embed-responsive-16by9"> -->
+                <div class="youtube">
+                    <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/playlist?list=PL-E3wgTJoMcG4iM-Q5f2fGxd5s7RZ2A8d" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                    <div class="splide" id="video-splide">
+                        <div class="splide__arrows">
+                            <button class="splide__arrow splide__arrow--prev">
+                                Prev
+                            </button>
+                            <button class="splide__arrow splide__arrow--next">
+                                Next
+                            </button>
+                        </div>
+                        <div class="splide__track">
+                            <ul class="splide__list"></ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- </div> -->
+            </section>
+
+            <footer>
+                <span lang="en-US"
+                    >Created by
+                    <a href="https://www.dillonestrada.com" target="_blank"
+                        >Dillon Estrada</a
+                    ></span
+                >
+                <span lang="es-MX" class="hide-lang"
+                    >Creado por
+                    <a href="https://www.dillonestrada.com" target="_blank"
+                        >Dillon Estrada</a
+                    ></span
+                >
+            </footer>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.14/dist/js/splide.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@0.4.6/dist/js/splide-extension-video.min.js"></script>
+    </body>
+</html>
