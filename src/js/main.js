@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
             switchLanguage(lang);
         });
     });
-    if (window.location.pathname.split("/")[1] == "media.html") {
+    if (window.location.pathname.split("/")[1] == "media") {
         buildYouTubeSplide(
             "PLeletbHqm_D6fHNkgn9Y9YQcUMxITAx1a",
             googleApiKey,
