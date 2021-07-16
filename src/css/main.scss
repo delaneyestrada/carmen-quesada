@@ -116,34 +116,52 @@ li {
 }
 
 @media screen and (max-width: 870px) {
-    div.fixed-image-right {
-        display: flex;
-        flex-direction: column;
+    #home {
+        #header {
+            padding-top: calc(40px + 1rem);
 
-        .fixed-image-container {
-            display: none;
+            .left {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+                top: 25%; /* position the top  edge of the element at the middle of the parent */
+                left: 50%; /* position the left edge of the element at the middle of the parent */
+
+                transform: translate(-50%, -25%);
+                width: 100%;
+                padding: 3rem;
+
+                .quote {
+                    margin-top: 2rem;
+                }
+            }
+            .right {
+                .header-image-container {
+                    position: relative;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    max-height: 100vh;
+                    overflow: hidden;
+                    &::before {
+                        content: ""; // ::before and ::after both require content
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: black;
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+        img {
+            width: 100%;
         }
     }
-
-    section > .main {
-        padding: 1em 0;
-    }
-    section > .main > *:not(.quote-section) {
-        padding: 0 1em;
-    }
-    // .quote-section {
-    //     margin: 0 -1em;
-    // }
-
-    // #media-main,
-    // #album-main {
-    //     padding-left: 0 !important;
-    //     padding-right: 0 !important;
-
-    //     .section-header {
-    //         padding-left: 1em;
-    //     }
-    // }
 
     form {
         width: 100%;
@@ -166,6 +184,42 @@ li {
 }
 
 @media screen and (min-width: 870px) {
+    .left-right-grid {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #home {
+        #header {
+            padding-top: calc(40px + 1rem);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            .left {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .quote {
+                    margin-top: 2rem;
+                }
+            }
+            .right {
+                .header-image-container {
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    max-height: 100vh;
+                    overflow: hidden;
+                }
+            }
+        }
+        img {
+            width: 100%;
+        }
+    }
+
     section .main {
         padding: 3em 4em 3em 3em;
         // opacity: 0;
@@ -194,7 +248,7 @@ li {
 h1 {
     font-family: $title-font;
     font-weight: 800;
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
 }
 
 .required {
@@ -223,13 +277,8 @@ h1 {
     border-radius: 0;
 }
 
-.left-right-grid {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 1fr 1fr;
-}
-
-h2 {
+h2,
+.banner > span {
     font-family: $title-font;
     font-size: clamp(1.2rem, 2vw, 1.6rem);
 }
@@ -350,36 +399,6 @@ section {
     }
 }
 
-#home {
-    #header {
-        padding-top: calc(40px + 1rem);
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        .left {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            .quote {
-                margin-top: 2rem;
-            }
-        }
-        .right {
-            .header-image-container {
-                -o-object-fit: cover;
-                object-fit: cover;
-                max-height: 100vh;
-                overflow: hidden;
-            }
-        }
-    }
-    img {
-        width: 100%;
-    }
-}
-
 .navbar-collapse {
     height: 40px;
 }
@@ -408,85 +427,8 @@ section {
     font-size: clamp(1rem, 1vw, 1.1rem) !important;
 }
 
-.secondary-page {
-    .main {
-        opacity: 1;
-    }
-    .fluidMedia {
-        display: block;
-        position: relative;
-        padding-bottom: 56.25%; /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
-        height: 0;
-        overflow: hidden;
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    }
-    #album-header {
-        padding-top: 0.3125rem + $logo-height + 1rem;
-        img {
-            width: 100%;
-            max-height: calc(100vh - 5.3125rem);
-            -o-object-fit: contain;
-            object-fit: contain;
-        }
-    }
-    .quote {
-        background-color: transparent;
-        font-size: clamp(0.9rem, 2.5vw, 1.5rem);
-        text-align: center;
-        font-weight: 600;
-    }
-    .album-info-section {
-        display: grid;
-        padding: 3rem 0;
-        .info {
-            h4 {
-                padding-left: 2rem;
-            }
-        }
-    }
-    @media screen and (min-width: 575px) {
-        .album-info-section {
-            grid-template-areas:
-                "album tracks"
-                "album personnel";
-            .info {
-                padding-top: 1rem;
-            }
-        }
-    }
-    @media screen and (max-width: 575px) {
-        .album-info-section {
-            grid-template-areas:
-                "album"
-                "tracks"
-                "personnel";
-            .info {
-                padding-top: 1rem;
-            }
-        }
-    }
-
-    #tracks {
-        grid-area: tracks;
-        align-self: end;
-    }
-    #personnel {
-        grid-area: personnel;
-    }
-    #album-art {
-        grid-area: album;
-        align-self: center;
-        width: 100%;
-        img {
-            width: 100%;
-        }
-    }
+.quote {
+    font-size: clamp(0.7rem, 1.3vw, 1rem);
 }
 
 // @media screen and (max-width: 870px) {
