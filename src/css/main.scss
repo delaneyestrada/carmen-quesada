@@ -273,6 +273,11 @@ h1 {
     border-radius: 0;
 }
 
+.dropdown-toggle > i,
+.dropdown-toggle::after {
+    color: $primary;
+}
+
 #about,
 #teaching-philosophy,
 #media,
@@ -285,8 +290,9 @@ h1 {
     width: -moz-fit-content;
     width: fit-content;
     margin: 1rem auto 0rem auto;
-    border-bottom: 2px solid $white;
+    border-bottom: 2px solid $primary;
 }
+
 .card {
     padding: 1rem;
     border-radius: 0;
