@@ -2,6 +2,8 @@ import "../css/main.scss";
 import { googleApiKey } from "./config";
 
 document.addEventListener("DOMContentLoaded", function () {
+    const storage = window.localStorage;
+
     // new Splide("#photo-splide", {
     //     type: "loop",
     //     perPage: 3,
@@ -87,12 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     const switchLanguage = (lang) => {
-        // if (lang == 'en-US'){
-        // } else if (lang == 'es-MX'){
-
-        // } else {
-        //     console.log('error')
-        // }
         const languages = {
             "en-US": "es-MX",
             "es-MX": "en-US",
@@ -108,11 +104,17 @@ document.addEventListener("DOMContentLoaded", function () {
             el.classList.add("hide-lang");
         });
     };
+
+    if (storage.getItem("lang") != null) {
+        switchLanguage(storage.getItem("lang"));
+    }
+
     const langSelectors = document.querySelectorAll(".lang-select");
     langSelectors.forEach((selector) => {
         selector.addEventListener("click", (e) => {
             let lang = e.target.dataset.lang;
             switchLanguage(lang);
+            storage.setItem("lang", lang);
         });
     });
     if (window.location.pathname.split("/")[1] == "media") {

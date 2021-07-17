@@ -65,6 +65,16 @@ let merged = merge(config, {
             },
         }),
         new HtmlWebPackPlugin({
+            template: "src/student-portal.html",
+            filename: "./student-portal.html",
+            favicon: "src/img/favicon.ico",
+            minify: {
+                removeAttributeQuotes: true,
+                collapseWhitespace: true,
+                removeComments: true,
+            },
+        }),
+        new HtmlWebPackPlugin({
             template: "src/contact.html",
             filename: "./contact.html",
             favicon: "src/img/favicon.ico",

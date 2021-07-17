@@ -40,6 +40,11 @@ let merged = merge(config, {
             favicon: "src/img/favicon.ico",
         }),
         new HtmlWebPackPlugin({
+            template: "src/student-portal.html",
+            filename: "./student-portal.html",
+            favicon: "src/img/favicon.ico",
+        }),
+        new HtmlWebPackPlugin({
             template: "src/contact.html",
             filename: "./contact.html",
             favicon: "src/img/favicon.ico",
