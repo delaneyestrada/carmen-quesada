@@ -56,6 +56,7 @@ $container-max-widths: (
 @import "../../node_modules/bootstrap/scss/carousel";
 @import "../../node_modules/bootstrap/scss/card";
 @import "../../node_modules/bootstrap/scss/alert";
+@import "../../node_modules/bootstrap/scss/spinners";
 
 @import "../../node_modules/bootstrap/scss/helpers";
 @import "../../node_modules/bootstrap/scss/utilities/api";
@@ -68,10 +69,6 @@ $container-max-widths: (
 // $danger: $red;
 $light: $gray-100;
 $navbar-bg: $primary;
-
-body.secondary-page {
-    background-color: lighten($dark, 1%);
-}
 
 .banner {
     width: 100%;
@@ -135,18 +132,18 @@ li {
             padding-top: calc(40px + 1rem);
 
             .left {
-                position: absolute;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 z-index: 2;
-                top: 25%; /* position the top  edge of the element at the middle of the parent */
-                left: 50%; /* position the left edge of the element at the middle of the parent */
+                // top: 25%; /* position the top  edge of the element at the middle of the parent */
+                // left: 50%; /* position the left edge of the element at the middle of the parent */
 
-                transform: translate(-50%, -25%);
+                // transform: translate(-50%, -25%);
                 width: 100%;
-                padding: 3rem;
+                padding: 1rem;
+                margin: 2rem 0;
 
                 .quote {
                     margin-top: 2rem;
@@ -159,16 +156,17 @@ li {
                     object-fit: cover;
                     max-height: 100vh;
                     overflow: hidden;
-                    &::before {
-                        content: ""; // ::before and ::after both require content
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background-color: black;
-                        opacity: 0.7;
-                    }
+                    margin-bottom: 2rem;
+                    // &::before {
+                    //     content: ""; // ::before and ::after both require content
+                    //     position: absolute;
+                    //     top: 0;
+                    //     left: 0;
+                    //     width: 100%;
+                    //     height: 100%;
+                    //     background-color: black;
+                    //     opacity: 0.7;
+                    // }
                 }
             }
         }
@@ -278,6 +276,40 @@ h1 {
     color: $primary;
 }
 
+html,
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
+body {
+    height: 100%;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBpZD0ibGlua2VkY2lyY2xlcyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImNoYWluZWRjaXJjbGVzIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB3aWR0aD0iOTciIGhlaWdodD0iOTciPjxjaXJjbGUgY3g9IjQ4LjUiIGN5PSI0OC41IiByPSI5MCIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiM2NmZjZjEiIGZpbGw9Im5vbmUiIGlkPSJjaXJjIiAvPjx1c2UgeGxpbms6aHJlZj0iI2NpcmMiIC8+PHVzZSB4bGluazpocmVmPSIjY2lyYyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTI1KSIvPjx1c2UgeGxpbms6aHJlZj0iI2NpcmMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjUpIi8+PHVzZSB4bGluazpocmVmPSIjY2lyYyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxMjUpIi8+PHVzZSB4bGluazpocmVmPSIjY2lyYyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtMTI1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNjaGFpbmVkY2lyY2xlcykiIC8+PC9zdmc+");
+    -webkit-filter: brightness(0.2);
+    filter: brightness(0.2);
+}
+
+.hide {
+    display: none !important;
+}
+
+#spinner-container {
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1001;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+}
+
 #about,
 #teaching-philosophy,
 #media,
@@ -285,6 +317,13 @@ h1 {
 #student-portal {
     padding-top: calc(40px + 1rem);
 }
+
+#content {
+    position: relative;
+    padding-bottom: 2.5rem;
+    min-height: 100vh;
+}
+
 .section-header {
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -371,12 +410,17 @@ h2,
 footer {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2.5rem;
+    background-color: $primary-bg;
 
     span {
         font-size: 0.8em;
-        padding: 0.5em;
-
+        vertical-align: middle;
+        line-height: 2.5rem;
         a {
             text-decoration: none;
         }
@@ -386,7 +430,7 @@ footer {
 body {
     font-family: $body-font;
     color: $white;
-    background-color: darken($dark, 1%);
+    background-color: $primary-bg;
 }
 
 .error {
@@ -529,9 +573,7 @@ section {
 //         }
 //     }
 // }
-#home {
-    background-color: $primary-bg;
-}
+
 .fixed-image-right {
     display: grid;
     grid-template-columns: 35% 65%;

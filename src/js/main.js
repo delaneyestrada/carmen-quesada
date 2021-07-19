@@ -109,6 +109,9 @@ document.addEventListener("DOMContentLoaded", function () {
         switchLanguage(storage.getItem("lang"));
     }
 
+    document.getElementById("content").classList.remove("hide");
+    document.getElementById("spinner-container").classList.add("hide");
+
     const langSelectors = document.querySelectorAll(".lang-select");
     langSelectors.forEach((selector) => {
         selector.addEventListener("click", (e) => {
