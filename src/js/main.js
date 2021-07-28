@@ -2,7 +2,7 @@ import "../css/main.scss";
 import { googleApiKey } from "./config";
 
 document.addEventListener("DOMContentLoaded", function () {
-    const storage = window.localStorage;
+    const storage = window.sessionStorage;
 
     // new Splide("#photo-splide", {
     //     type: "loop",
