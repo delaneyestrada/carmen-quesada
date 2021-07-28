@@ -84,6 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     fixedWidth: "100%",
                     focus: "center",
                     heightRatio: 0.5625,
+                    video: {
+                        loop: true,
+                    },
                 }).mount(window.splide.Extensions);
             });
     };
@@ -120,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
             storage.setItem("lang", lang);
         });
     });
-    if (window.location.pathname.split("/")[1] == "media") {
+    if (window.location.pathname.split("/")[1] == "media.html") {
         buildYouTubeSplide(
             "PLeletbHqm_D6fHNkgn9Y9YQcUMxITAx1a",
             googleApiKey,
