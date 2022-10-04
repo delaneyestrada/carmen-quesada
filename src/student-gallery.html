@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carmen Quesada - Student Portal</title>
+    <title>Carmen Quesada - Student Gallery</title>
     <!-- SEO AND SOCIAL MEDIA META TAGS -->
     <meta
       name="description"
@@ -43,6 +43,15 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Martel:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@latest/dist/css/splide-extension-video.min.css"
+    />
+
     <script
       src="https://kit.fontawesome.com/a8f5f6bfc2.js"
       crossorigin="anonymous"
@@ -89,10 +98,13 @@
               lang="es-MX"
               >Filosofía de enseñanza</a
             >
-            <a class="nav-link" lang="en-US" href="/student-gallery"
+            <a class="nav-link active" lang="en-US" href="/student-gallery"
               >Student Gallery</a
             >
-            <a class="nav-link hide-lang" href="/student-gallery" lang="es-MX"
+            <a
+              class="nav-link active hide-lang"
+              href="/student-gallery"
+              lang="es-MX"
               >Estudiantes</a
             >
             <a class="nav-link" lang="en-US" href="/student-portal"
@@ -149,30 +161,73 @@
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
-    <div class="container-lg hide" id="content">
-      <section id="student-portal">
-        <h2 class="section-header" lang="en-US">Student Portal</h2>
-        <h2 class="section-header hide-lang" lang="es-MX">Portal en línea</h2>
-        <div class="card mb-4">
-          <div class="card-body">
-            <span lang="en-US"
-              >For current students to log into their student portals for
-              payments, scheduling, and more, please log in. New students will
-              receive information on how to create their accounts via
-              email.</span
-            >
-            <span lang="es-MX" class="hide-lang"
-              >Para que actuales estudiantes puedan hacer pagos, horarios y mas,
-              favor de entrar en sus portales. Los nuevos estudiantes recibirán
-              información sobre como crear sus cuentas a través de correo
-              electrónico.</span
-            >
+    <div class="container-xxl hide" id="content">
+      <section id="media">
+        <h2 class="section-header" lang="en-US">Photo Gallery</h2>
+        <h2 class="section-header hide-lang" lang="es-MX">Galería</h2>
+        <div class="splide" id="photo-splide">
+          <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="splide__arrow splide__arrow--next">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src="./img/1.jpg" alt="" />
+              </li>
+              <li class="splide__slide"><img src="./img/2.jpg" alt="" /></li>
+              <li class="splide__slide">
+                <img src="./img/3.jpeg" alt="" />
+              </li>
+              <li class="splide__slide"><img src="./img/4.jpg" alt="" /></li>
+              <li class="splide__slide">
+                <img src="./img/5.jpg" alt="" />
+              </li>
+              <li class="splide__slide"><img src="./img/6.jpg" alt="" /></li>
+              <li class="splide__slide">
+                <img src="./img/7.jpg" alt="" />
+              </li>
+              <li class="splide__slide"><img src="./img/8.jpg" alt="" /></li>
+              <li class="splide__slide">
+                <img src="./img/9.jpg" alt="" />
+              </li>
+              <li class="splide__slide"><img src="./img/10.PNG" alt="" /></li>
+              <li class="splide__slide">
+                <img src="./img/11.PNG" alt="" />
+              </li>
+              <li class="splide__slide"><img src="./img/12.PNG" alt="" /></li>
+              <li class="splide__slide">
+                <img src="./img/13.PNG" alt="" />
+              </li>
+              <li class="splide__slide"><img src="./img/14.PNG" alt="" /></li>
+            </ul>
           </div>
         </div>
-        <script
-          type="text/javascript"
-          src="https://app.mymusicstaff.com/Widget/v2/Login.ashx"
-        ></script>
+        <h2 class="section-header" lang="en-US">Student Performances</h2>
+        <h2 class="section-header hide-lang" lang="es-MX">
+          Recital de estudiantes
+        </h2>
+        <div class="youtube">
+          <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/playlist?list=PL-E3wgTJoMcG4iM-Q5f2fGxd5s7RZ2A8d" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+          <div class="splide" id="video-splide">
+            <div class="splide__arrows">
+              <button class="splide__arrow splide__arrow--prev">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <button class="splide__arrow splide__arrow--next">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+            <div class="splide__track">
+              <ul class="splide__list"></ul>
+            </div>
+          </div>
+        </div>
+        <!-- </div> -->
       </section>
 
       <footer>
@@ -190,5 +245,8 @@
         >
       </footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@latest/dist/js/splide-extension-video.min.js"></script>
   </body>
 </html>
