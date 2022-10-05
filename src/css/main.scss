@@ -423,6 +423,9 @@ h2,
   align-items: center;
 
   .splide__arrow {
+    opacity: 1;
+    background-color: black;
+    color: $primary;
     top: 0;
     bottom: 0;
     margin: auto 0;
