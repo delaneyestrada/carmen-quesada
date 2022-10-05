@@ -1,5 +1,7 @@
 import '../css/main.scss';
 import { googleApiKey } from './config';
+import Modal from 'bootstrap/js/dist/modal';
+
 
 document.addEventListener('DOMContentLoaded', function () {
   const storage = window.sessionStorage;
@@ -128,5 +130,29 @@ document.addEventListener('DOMContentLoaded', function () {
         },
       },
     }).mount(window.Splide.Extensions);
-  }
+
+    const slides = document.querySelectorAll('.splide__slide')
+    slides.forEach(slide => {
+      const delta = 6;
+      let startX;
+      let startY;
+
+      slide.addEventListener('mousedown', (e) => {
+        startX = e.pageX;
+        startY = e.pageY;
+      })
+      slide.addEventListener('mouseup', (e) => {
+        const diffX = Math.abs(e.pageX - startX);
+        const diffY = Math.abs(e.pageY - startY);
+        console.log(e.pageX, startX)
+        console.log(e.pageY, startY)
+        if (diffX < delta && diffY < delta) {
+          let src = e.target.getAttribute('src')
+          document.querySelector('#modal-image').setAttribute('src', src);
+          var myModal = new Modal(document.getElementById('myModal'), {})
+          myModal.show();
+        }
+      })
+    })
+  } 
 });
