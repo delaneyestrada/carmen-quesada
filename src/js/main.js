@@ -131,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     }).mount(window.Splide.Extensions);
 
+    if(window.innerWidth > 500) {
     const slides = document.querySelectorAll('.splide__slide')
     slides.forEach(slide => {
       const delta = 6;
@@ -154,5 +155,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       })
     })
+  }
   } 
 });

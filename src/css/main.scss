@@ -391,18 +391,27 @@ body {
 
     }
 }
-.modal-body, .modal-footer {
+.modal-body, .modal-footer, .modal-header {
     background-color:$black;
     border: none;
+}
+.modal-header {
+  padding: 0;
+}
+
+.modal-content {
+  background-color: transparent;
 }
 
 #modal-image {
     object-fit: contain;
     width: 100%;
+    max-height: 85vh;
 }
 .modal-dialog {
     max-width: 1000px;
     width: 65vw;
+    margin: 1.75rem auto !important;
 }
 
 .splide__slide {
